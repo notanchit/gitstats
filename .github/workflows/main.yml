@@ -41,7 +41,7 @@ jobs:
       run: |
         ./zig-out/bin/github-stats
       env:
-        ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+        ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN || github.token }}
         EXCLUDE_REPOS: ${{ secrets.EXCLUDE_REPOS }}
         EXCLUDE_LANGS: ${{ secrets.EXCLUDE_LANGS }}
         EXCLUDE_PRIVATE: "false"
